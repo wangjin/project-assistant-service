@@ -1,7 +1,7 @@
 package com.codebetterlife.projectassistant.user.service.impl;
 
-import com.codebetterlife.projectassistant.user.domain.User;
 import com.codebetterlife.projectassistant.base.repository.BaseRepository;
+import com.codebetterlife.projectassistant.user.domain.User;
 import com.codebetterlife.projectassistant.user.repository.UserRepository;
 import com.codebetterlife.projectassistant.user.service.UserService;
 import lombok.RequiredArgsConstructor;

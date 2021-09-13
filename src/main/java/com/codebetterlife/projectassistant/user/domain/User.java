@@ -1,12 +1,12 @@
 package com.codebetterlife.projectassistant.user.domain;
 
 import com.codebetterlife.projectassistant.base.domain.BaseDomain;
-import lombok.Getter;
-import lombok.Setter;
+import com.codebetterlife.projectassistant.worktime.domain.WorkTime;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Jin Wang
@@ -16,6 +16,9 @@ import javax.persistence.Table;
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "t_user")
 public class User extends BaseDomain {
 
@@ -30,4 +33,19 @@ public class User extends BaseDomain {
      */
     @Column(length = 11)
     private String mobile;
+
+    /**
+     * 用户类型
+     */
+    @Column(length = 10)
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
+
+    /**
+     * 工时列表
+     */
+    @JsonBackReference
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<WorkTime> workTimeList;
+
 }

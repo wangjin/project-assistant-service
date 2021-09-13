@@ -1,12 +1,12 @@
 package com.codebetterlife.projectassistant.user.web;
 
 import com.codebetterlife.projectassistant.base.domain.Response;
+import com.codebetterlife.projectassistant.base.repository.SpecificationBuilder;
 import com.codebetterlife.projectassistant.user.domain.User;
+import com.codebetterlife.projectassistant.user.domain.UserCriteria;
 import com.codebetterlife.projectassistant.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +24,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping(value = "/page")
-    public Response<Page<User>> page(User user, Pageable pageable) {
-        return Response.success(userService.findByPage(Example.of(user), pageable));
+    public Response<Page<User>> page(UserCriteria criteria, Pageable pageable) {
+        return Response.success(userService.findByPage(criteria, pageable));
     }
 
     @GetMapping(value = "/{id}")
