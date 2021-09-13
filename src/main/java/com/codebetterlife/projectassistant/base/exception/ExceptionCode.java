@@ -1,5 +1,6 @@
 package com.codebetterlife.projectassistant.base.exception;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import lombok.Setter;
  * @version 1.0
  * @date 2021-09-01 7:13 下午
  */
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ExceptionCode implements IResultCode {
     /**
      * 定义响应码

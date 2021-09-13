@@ -1,7 +1,9 @@
 package com.codebetterlife.projectassistant.base.service;
 
 import com.codebetterlife.projectassistant.base.domain.BaseDomain;
+import com.codebetterlife.projectassistant.base.domain.criteria.BaseCriteria;
 import com.codebetterlife.projectassistant.base.repository.BaseRepository;
+import com.codebetterlife.projectassistant.base.repository.SpecificationBuilder;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -57,6 +59,17 @@ public interface BaseService<T extends BaseDomain, ID> {
     default Page<T> findByPage(Example<T> example, Pageable pageable) {
         example.getProbe().setDelFlag((byte) 0);
         return getRepository().findAll(example, pageable);
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param baseCriteria baseCriteria
+     * @param pageable     分页信息
+     * @return 分页数据
+     */
+    default Page<T> findByPage(BaseCriteria baseCriteria, Pageable pageable) {
+        return getRepository().findAll(new SpecificationBuilder<>(baseCriteria), pageable);
     }
 
     /**
