@@ -34,7 +34,7 @@ public class UserCriteria extends BaseCriteria {
     private StringCriteria mobile;
 
     /**
-     * 手机号码
+     * 用户类型
      */
     private EnumCriteria userType;
 
