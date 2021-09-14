@@ -28,18 +28,4 @@ public class BaseCriteria {
 
     private ByteCriteria delFlag;
 
-    public List<SearchCriteria> getSearchCriteriaList() {
-        List<SearchCriteria> searchCriteriaList = new ArrayList<>();
-        if (!isEmpty(id) && !isEmpty(id.getEquals())) {
-            searchCriteriaList.add(new SearchCriteria("id", Operator.EQUALS, id.getEquals()));
-        }
-
-        if (!isEmpty(delFlag) && !isEmpty(delFlag.getEquals())) {
-            searchCriteriaList.add(new SearchCriteria("delFlag", Operator.EQUALS, delFlag.getEquals()));
-        } else {
-            searchCriteriaList.add(new SearchCriteria("delFlag", Operator.EQUALS, ((byte) 0)));
-        }
-        return searchCriteriaList;
-    }
-
 }

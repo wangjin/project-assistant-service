@@ -1,7 +1,6 @@
 package com.codebetterlife.projectassistant.user.web;
 
 import com.codebetterlife.projectassistant.base.domain.Response;
-import com.codebetterlife.projectassistant.base.repository.SpecificationBuilder;
 import com.codebetterlife.projectassistant.user.domain.User;
 import com.codebetterlife.projectassistant.user.domain.UserCriteria;
 import com.codebetterlife.projectassistant.user.service.UserService;

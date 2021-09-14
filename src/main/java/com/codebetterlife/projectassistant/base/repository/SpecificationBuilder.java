@@ -1,6 +1,7 @@
 package com.codebetterlife.projectassistant.base.repository;
 
 import com.codebetterlife.projectassistant.base.domain.criteria.BaseCriteria;
+import com.codebetterlife.projectassistant.util.SearchCriteriaUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -24,7 +25,7 @@ public class SpecificationBuilder<E> implements Specification<E> {
     @Override
     public Predicate toPredicate(Root<E> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = new ArrayList<>();
-        baseCriteria.getSearchCriteriaList().forEach(criteria -> {
+        SearchCriteriaUtil.getSearchList(baseCriteria).forEach(criteria -> {
             switch (criteria.getOperation()) {
                 case EQUALS:
                     predicates.add(criteriaBuilder.equal(root.get(criteria.getKey()), criteria.getValue()));
