@@ -44,6 +44,6 @@ public class SpecificationBuilder<E> implements Specification<E> {
             }
         });
 
-        return query.where(predicates.toArray(new Predicate[0])).getRestriction();
+        return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
     }
 }
