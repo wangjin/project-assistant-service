@@ -2,7 +2,6 @@ package com.codebetterlife.projectassistant.user.repository;
 
 import com.codebetterlife.projectassistant.base.repository.BaseRepository;
 import com.codebetterlife.projectassistant.user.domain.User;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @date 2021-09-01 7:58 下午
  */
 @Repository
-public interface UserRepository extends BaseRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends BaseRepository<User, Long> {
 }
