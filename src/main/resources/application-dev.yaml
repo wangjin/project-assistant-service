@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://server.codebetterlife.com:30001/project_assistant?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
-    username: project-assistant
-    password: project-assistant@0318
+    username: ENC(E210iY3yhOtjUtExYTQ6nO6x+raZwFrn7t7z+x5P/qiCIINltuVydeLxiFojGfkezYLCiutyeA3hCjhTbMhDYg==)
+    password: ENC(aVQHqVYxKxibcjShdSIGvelyRlA2tAs29/LdeCay18dvbTU/h4d0YO9riR0bdNGitvCjd1ZY+Q1KVnPO4YsMtw==)
 
 
   jpa:
